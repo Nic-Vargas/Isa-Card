@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Isa 💖</title>
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(to bottom, #ffccff, #ff99cc);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .carousel-container {
+            width: 20%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .message {
+            font-size: 1.5em;
+            margin: 20px;
+            color: #d63384;
+        }
+        .love-note {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90vw;
+            max-width: 1200px;
+            margin: 50px auto;
+            font-size: 1.4em;
+            color: #d63384;
+            line-height: 1.8;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        .music-controls {
+            margin-top: 20px;
+        }
+        .heart {
+            position: fixed;
+            color: red;
+            font-size: 20px;
+            animation: float 5s linear infinite;
+            opacity: 0.8;
+            bottom: -50px; 
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-120vh) scale(0.8); opacity: 0; } 
+        }
+    </style>
+</head>
+<body>
+    <h1>Para la mejor novia del mundo 💕</h1>
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="Imagenes/IMG_1.jpg" alt="Foto 1">
+            <img src="Imagenes/IMG_2.jpg" alt="Foto 2">
+            <img src="Imagenes/IMG_3.jpg" alt="Foto 3">
+            <img src="Imagenes/IMG_4.jpg" alt="Foto 4">
+            <img src="Imagenes/IMG_5.jpg" alt="Foto 5">
+            <img src="Imagenes/IMG_6.jpg" alt="Foto 6">
+            <img src="Imagenes/IMG_7.jpg" alt="Foto 7">
+            <img src="Imagenes/IMG_8.jpg" alt="Foto 8">
+            <img src="Imagenes/IMG_9.jpg" alt="Foto 9">
+            <img src="Imagenes/IMG_10.jpg" alt="Foto 10">
+            <img src="Imagenes/IMG_11.jpg" alt="Foto 11">
+            <img src="Imagenes/IMG_12.jpg" alt="Foto 12">
+            <img src="Imagenes/IMG_13.jpg" alt="Foto 13">
+            <img src="Imagenes/IMG_14.jpg" alt="Foto 14">
+            <img src="Imagenes/IMG_15.jpg" alt="Foto 15">
+            <img src="Imagenes/IMG_16.jpg" alt="Foto 16">
+            <img src="Imagenes/IMG_17.jpg" alt="Foto 17">
+            <img src="Imagenes/IMG_18.jpg" alt="Foto 18">
+            <img src="Imagenes/IMG_19.jpg" alt="Foto 19">
+            <img src="Imagenes/IMG_20.jpg" alt="Foto 20">
+            <img src="Imagenes/IMG_21.jpg" alt="Foto 21">
+            <img src="Imagenes/IMG_22.jpg" alt="Foto 22">
+            <img src="Imagenes/IMG_23.jpg" alt="Foto 23">
+            <img src="Imagenes/IMG_24.jpg" alt="Foto 24">
+            <img src="Imagenes/IMG_25.jpg" alt="Foto 25">
+        </div>
+    </div>
+
+    <p class="message">Amor, eres lo mejor que me ha pasado. Gracias por hacerme tan feliz 💖</p>
+
+    <div class="love-note">
+        <p>Sabes que no soy el mejor con las palabras cuando se trata de expresar todo lo que siento, pero aquí estoy, haciéndolo a mi manera, con algo que refleja lo mucho que significas para mí. Esta página es solo un pequeño detalle, pero detrás de cada imagen, cada corazón flotando por ahí y cada cosa que ves aquí, hay un pedacito de todo lo que siento por ti.</p>
+        <p>Desde que entraste en mi vida, todo ha sido diferente. Seguramente lo haz notado, pero siempre al hablar contigo o cuando se que me voy a ver contigo, se me ilumina la cara. Eres la persona que me da paz, la que hace que los días malos sean menos malos y que los buenos sean aún mejores. Cada momento contigo es especial, desde las conversaciones más profundas hasta las tonterías que solo nosotros entendemos.</p>
+        <p>No hay un solo día en el que no me sienta agradecido por tenerte a mi lado. Eres increíble en todos los sentidos, y aunque a veces me quede sin palabras para decírtelo, quiero que sepas que lo pienso y lo siento con cada parte de mí.</p>
+        <p>Esta es mi forma de demostrarte cuánto te amo, con algo hecho a mi estilo, algo en lo que puse mi corazón porque tú eres lo más importante para mí. Espero que al ver esto sientas un poquito de todo el amor que tengo por ti.</p>
+    </div>
+
+    <div class="music-controls">
+        <button onclick="playMusic()">🎶 Reproducir Música</button>
+        <iframe id="spotify" style="display:none;" src="" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <audio id="mp3" src="Music/Better Together.mp3" style="display:none;"></audio>
+    </div>
+    <script>
+        let index = 0;
+        function startCarousel() {
+            const carousel = document.querySelector('.carousel');
+            const images = document.querySelectorAll('.carousel img');
+            const totalImages = images.length;
+            
+            setInterval(() => {
+                index++;
+                if (index === totalImages) {
+                    index = 0;
+                }
+                carousel.style.transform = `translateX(-${index * 100}%)`;
+            }, 3000);
+        }
+        document.addEventListener("DOMContentLoaded", startCarousel);
+        
+        function playMusic() {
+            let spotify = document.getElementById('spotify');
+            let mp3 = document.getElementById('mp3');
+            
+            if (spotify.src === "") {
+                spotify.src = "https://open.spotify.com/track/2iXdwVdzA0KrI2Q0iZNJbX?si=7gjeTGq6R82ixlN10EaZoA";
+                spotify.style.display = "block";
+            } else {
+                mp3.play();
+            }
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            document.body.appendChild(heart);
+
+            let size = Math.random() * 30 + 10;
+            heart.style.fontSize = size + "px";
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.bottom = "-50px";
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }   
+
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
